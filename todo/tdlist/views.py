@@ -1,8 +1,15 @@
 # from django.http import HttpResponse, JsonResponse
 # from django.views.decorators.csrf import csrf_exempt
 
-from django.views.generic import DetailView, CreateView, ListView, UpdateView, DeleteView
+from django.views.generic import (
+    DetailView,
+    CreateView,
+    ListView,
+    UpdateView,
+    DeleteView,
+)
 from tdlist.models import Tasklist
+
 
 class TaskDetailView(DetailView):
     """Представление для отображения одной корзины.
@@ -10,9 +17,9 @@ class TaskDetailView(DetailView):
     .._ https://docs.djangoproject.com/en/4.1/ref/class-based-views/generic-display/#detailview
     """
 
-    context_object_name = 'task'
+    context_object_name = "task"
     model = Tasklist
-#    queryset = Tasklist.objects.filter(is_done=False)
+    #    queryset = Tasklist.objects.filter(is_done=False)
     template_name = "task_detail.html"
 
 
@@ -22,15 +29,15 @@ class TaskListView(ListView):
     .._ https://docs.djangoproject.com/en/4.1/ref/class-based-views/generic-display/#listview
     """
 
-    context_object_name = 'tasks_'
- #   queryset = Tasklist.objects.filter(is_done=False)
+    context_object_name = "tasks_"
+    #   queryset = Tasklist.objects.filter(is_done=False)
     model = Tasklist
     template_name = "task_list.html"
 
 
 class TaskListViewActive(ListView):
 
-    context_object_name = 'tasks_'
+    context_object_name = "tasks_"
     queryset = Tasklist.objects.filter(is_done=False)
     model = Tasklist
     template_name = "task_list.html"
@@ -41,19 +48,21 @@ class TaskCreateView(CreateView):
 
     .._ https://docs.djangoproject.com/en/4.1/ref/class-based-views/generic-editing/#django.views.generic.edit.CreateView
     """
+
     model = Tasklist
-    fields = ['taskText', 'created_time', 'is_done']
+    fields = ["taskText", "created_time", "is_done"]
     template_name = "task_create.html"
-    success_url = '/tasks/'
+    success_url = "/tasks/"
+
 
 class TaskUpdateView(UpdateView):
     model = Tasklist
-    fields = ['taskText', 'created_time', 'is_done']
+    fields = ["taskText", "created_time", "is_done"]
     template_name = "task_update.html"
-    success_url = '/tasks/'
+    success_url = "/tasks/"
 
 
 class TaskDeleteView(DeleteView):
     model = Tasklist
     template_name = "task_delete.html"
-    success_url = '/tasks/'
+    success_url = "/tasks/"

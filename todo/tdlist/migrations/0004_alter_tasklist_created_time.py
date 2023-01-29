@@ -7,13 +7,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tdlist', '0003_alter_tasklist_created_time'),
+        ("tdlist", "0003_alter_tasklist_created_time"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='tasklist',
-            name='created_time',
-            field=models.DateTimeField(default=datetime.datetime(2023, 1, 27, 23, 14, 2, 210123), help_text='Дата создения задачи'),
+            model_name="tasklist",
+            name="created_time",
+            field=models.DateTimeField(
+                default=datetime.datetime(2023, 1, 27, 23, 14, 2, 210123),
+                help_text="Дата создения задачи",
+            ),
         ),
     ]

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from tdlist.models import Tasklist
 
+
 @admin.register(Tasklist)
 class TasklistAdmin(admin.ModelAdmin):
     """Отображение модели Tasklist в админке."""
@@ -12,5 +13,5 @@ class TasklistAdmin(admin.ModelAdmin):
         "is_done",
         "finish_time",
     )
-    readonly_fields = ["finish_time"]   # эти поля недоступны для редактирования
+    readonly_fields = ["finish_time"]  # эти поля недоступны для редактирования
     search_fields = ("id", "taskText")  # по каким полям будет производиться поиск

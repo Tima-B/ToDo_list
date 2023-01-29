@@ -7,13 +7,15 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tdlist', '0002_tasklist_created_time_tasklist_finish_time_and_more'),
+        ("tdlist", "0002_tasklist_created_time_tasklist_finish_time_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='tasklist',
-            name='created_time',
-            field=models.DateTimeField(default=django.utils.timezone.now, help_text='Дата создения задачи'),
+            model_name="tasklist",
+            name="created_time",
+            field=models.DateTimeField(
+                default=django.utils.timezone.now, help_text="Дата создения задачи"
+            ),
         ),
     ]

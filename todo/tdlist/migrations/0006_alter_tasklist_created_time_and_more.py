@@ -7,23 +7,36 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tdlist', '0005_alter_tasklist_created_time'),
+        ("tdlist", "0005_alter_tasklist_created_time"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='tasklist',
-            name='created_time',
-            field=models.DateTimeField(default=datetime.datetime(2023, 1, 28, 12, 5, 8, 458944), help_text='Дата создения задачи'),
+            model_name="tasklist",
+            name="created_time",
+            field=models.DateTimeField(
+                default=datetime.datetime(2023, 1, 28, 12, 5, 8, 458944),
+                help_text="Дата создения задачи",
+            ),
         ),
         migrations.AlterField(
-            model_name='tasklist',
-            name='finish_time',
-            field=models.DateTimeField(blank=True, default=None, help_text='Дата завершения задачи', null=True, verbose_name='Завершено'),
+            model_name="tasklist",
+            name="finish_time",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Дата завершения задачи",
+                null=True,
+                verbose_name="Завершено",
+            ),
         ),
         migrations.AlterField(
-            model_name='tasklist',
-            name='is_done',
-            field=models.BooleanField(default=False, help_text='Пометка о выполнении', verbose_name='Выюполнено'),
+            model_name="tasklist",
+            name="is_done",
+            field=models.BooleanField(
+                default=False,
+                help_text="Пометка о выполнении",
+                verbose_name="Выюполнено",
+            ),
         ),
     ]

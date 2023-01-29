@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tdlist', '0004_alter_tasklist_created_time'),
+        ("tdlist", "0004_alter_tasklist_created_time"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='tasklist',
-            name='created_time',
-            field=models.DateTimeField(auto_now=True, help_text='Дата создения задачи'),
+            model_name="tasklist",
+            name="created_time",
+            field=models.DateTimeField(auto_now=True, help_text="Дата создения задачи"),
         ),
     ]

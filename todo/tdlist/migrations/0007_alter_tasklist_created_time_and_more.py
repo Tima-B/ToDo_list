@@ -7,23 +7,35 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tdlist', '0006_alter_tasklist_created_time_and_more'),
+        ("tdlist", "0006_alter_tasklist_created_time_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='tasklist',
-            name='created_time',
-            field=models.DateTimeField(default=datetime.datetime(2023, 1, 28, 13, 7, 59, 426465), help_text='Дата создения задачи', verbose_name='Создано'),
+            model_name="tasklist",
+            name="created_time",
+            field=models.DateTimeField(
+                default=datetime.datetime(2023, 1, 28, 13, 7, 59, 426465),
+                help_text="Дата создения задачи",
+                verbose_name="Создано",
+            ),
         ),
         migrations.AlterField(
-            model_name='tasklist',
-            name='finish_time',
-            field=models.DateTimeField(blank=True, default=None, help_text='Дата завершения задачи', null=True, verbose_name='Время завершения'),
+            model_name="tasklist",
+            name="finish_time",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Дата завершения задачи",
+                null=True,
+                verbose_name="Время завершения",
+            ),
         ),
         migrations.AlterField(
-            model_name='tasklist',
-            name='taskText',
-            field=models.CharField(help_text='Описание задачи', max_length=200, verbose_name='Текст задачи'),
+            model_name="tasklist",
+            name="taskText",
+            field=models.CharField(
+                help_text="Описание задачи", max_length=200, verbose_name="Текст задачи"
+            ),
         ),
     ]

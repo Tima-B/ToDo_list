@@ -6,23 +6,25 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tdlist', '0001_initial'),
+        ("tdlist", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='tasklist',
-            name='created_time',
-            field=models.DateTimeField(auto_now=True, help_text='Дата создения задачи'),
+            model_name="tasklist",
+            name="created_time",
+            field=models.DateTimeField(auto_now=True, help_text="Дата создения задачи"),
         ),
         migrations.AddField(
-            model_name='tasklist',
-            name='finish_time',
-            field=models.DateTimeField(default=None, help_text='Дата завершения задачи'),
+            model_name="tasklist",
+            name="finish_time",
+            field=models.DateTimeField(
+                default=None, help_text="Дата завершения задачи"
+            ),
         ),
         migrations.AddField(
-            model_name='tasklist',
-            name='is_done',
-            field=models.BooleanField(default=False, help_text='Пометка о выполнении'),
+            model_name="tasklist",
+            name="is_done",
+            field=models.BooleanField(default=False, help_text="Пометка о выполнении"),
         ),
     ]
