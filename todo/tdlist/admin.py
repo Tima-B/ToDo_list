@@ -12,5 +12,5 @@ class TasklistAdmin(admin.ModelAdmin):
         "is_done",
         "finish_time",
     )
-    readonly_fields = ["finish_time"]
+    readonly_fields = ["finish_time"]   # эти поля недоступны для редактирования
     search_fields = ("id", "taskText")  # по каким полям будет производиться поиск

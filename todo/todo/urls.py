@@ -16,6 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from tdlist.views import (
+    TaskDetailView,
+    TaskListView,
+    TaskListViewActive,
+    TaskCreateView,
+    TaskUpdateView,
+    TaskDeleteView,
+)
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("tasks/<int:pk>", TaskDetailView.as_view()),
+    path("tasks/", TaskListView.as_view()),
+    path("tasks/active", TaskListViewActive.as_view()),
+    path("tasks/new/", TaskCreateView.as_view(), name="tasks_new"),
+    path("tasks/update/<int:pk>", TaskUpdateView.as_view(), name='tasks_update'),
+    path("tasks/delete/<int:pk>", TaskDeleteView.as_view(), name='tasks_delete'),
 ]
