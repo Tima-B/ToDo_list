@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="task mb-4">
+    <p class="task mb-4">
         <div class="task-body">
             <h4 class="task-title">{{ task.pk }} </h4>
             <h5 class="task-title">задача: {{ task.taskText }}</h5>
@@ -9,7 +9,11 @@
             <h6 class="task-subtitle mb-2 text-muted">выполнено {{ task.is_done }}</h6>
             <p class="task-text">время завершения: {{ task.finish_time }}</p>
         </div>
-        <a href="{% url 'tasks_update' task.pk %}">+ Измеить запись </a><br>
-        <a href="{% url 'tasks_delete' task.pk %}">+ Удалить запись </a>
+        <form action="{% url 'tasks_update' task.pk %}" method="get">
+            <input type="submit" value="Изменить запись">
+        </form><br>
+        <form action="{% url 'tasks_delete' task.pk %}" method="get">
+            <input type="submit" value="Удалить запись">
+        </form>
     </div>
 {% endblock content %}

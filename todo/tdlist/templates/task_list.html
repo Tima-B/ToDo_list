@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <a href="{% url 'tasks_new' %}">+ Добавить запись </a><br><br>
+    <form action="new" method="get">
+        <input type="submit" value="Добавить запись">
+    </form><br>
+
     {% for task in tasks_ %}
         <div class="task mb-4">
             <div class="task-body">
